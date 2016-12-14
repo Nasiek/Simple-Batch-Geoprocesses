@@ -1,0 +1,19 @@
+import arcpy
+from arcpy import env
+env.workspace = "C:/Users/Keisan/Documents/CPLN590/HW_Outputs"
+arcpy.env.overwriteOutput = True
+outputpath = "C:/Users/Documents/HWGDB.gdb/Co_"
+clipper = "C:/Users/Documents/HW2_shpfiles/OuterCountiesFull.shp"
+ABV_list = ["ClT", "LBT", "FT", "CnT","MrT", "AB", "CT", "MtB","AkB", "DB", "EbT", "PT","WCT", "BT", "LT", "PsT","DT", "EDT", "EnT", "PvT","QB", "SB", "ST", "WET","CyT", "WDT", "SsT", "CsT","BrT", "LB", "WwT", "MB","CrB", "SdT", "EET", "THB","ECT", "MJT", "EGT", "MJB","RT", "EB", "ET", "ET","NHB", "EbB"
+for abv in ABV_list:
+    arcpy.Select_analysis("C:/Users/Keisan/Documents/CPLN590/HW2_shpfiles/OuterCountiesFull.shp", outputpath + abv,"ABBREVIATI  = '{}'".format(abv))
+
+import arcpy
+from arcpy import env
+env.workspace = "C:/Users/Keisan/Documents/CPLN590/HW_Outputs"
+arcpy.env.overwriteOutput - True
+outputpath2 = "C:/Users/Keisan/Documents/CPLN590/HWGDB.gdb/ICo_"
+iclipper = "C:/Users/Keisan/Documents/CPLN590/HW2_shpfiles/aLL_iNSIDE_COOUNTIES.shp"
+ABV_list2 = ["EPB","EFT","ULT", "MhT","MT","MvB" "PqT","WLT", "ELT", "LcT","MlB","CB","WHT","L"]
+for iabv in ABV_list2:
+    arcpy.Select_analysis(iclipper, outputpath2 + iabv, "ABBREVIATI = '{}'".format(iabv)) 
